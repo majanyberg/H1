@@ -2,14 +2,17 @@
 
 function cone(n, rune){
     
-    return n === 1
+    return iter(n, rune, 1);
+    
+}
+
+function iter(n, rune, counter){
+    
+    return counter === n
     ? rune
-    : //overlay(cone(n-1, scale((n)/4, rune)), rune);
-    
-    
-    overlay(scale((n-1)/4, cone(n-1,rune)), rune);
+    : overlay_frac(counter/n, scale(counter/n, rune), iter(n, rune, counter+1) );
 }
 
 // Tests
 show(cone(4, circle));
-//hollusion(cone(15, circle));
+//hollusion(cone(4, circle));
