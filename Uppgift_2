@@ -1,0 +1,15 @@
+function scale_rune(n, rune){
+    return scale(n/4, rune);
+    
+}
+
+function cone(n, rune){
+    
+    return n === 1
+    ? rune
+    : overlay(scale_rune(n-1, rune), scale_rune(n, rune));
+}
+
+// Tests
+show(cone(4, circle));
+//hollusion(cone(15, circle));
