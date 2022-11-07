@@ -1,13 +1,13 @@
-function scale_rune(n, rune){
-    return scale(n/4, rune);
-    
-}
+// Eric Buxton och Maja Nyberg
 
 function cone(n, rune){
     
     return n === 1
     ? rune
-    : overlay(scale_rune(n-1, rune), scale_rune(n, rune));
+    : //overlay(cone(n-1, scale((n)/4, rune)), rune);
+    
+    
+    overlay(scale((n-1)/4, cone(n-1,rune)), rune);
 }
 
 // Tests
