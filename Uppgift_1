@@ -1,3 +1,5 @@
+//Eric Buxton och Maja Nyberg
+
 function overlay_four(r1, r2, r3, r4){
     return stack(overlay((beside(r4, blank)), (beside(blank, overlay(blank, r1)))),
     
@@ -13,4 +15,4 @@ function steps(r1, r2, r3, r4){
 
 // Tests
 show(steps(rcross, triangle, corner, nova));
-//hollusion(steps(rcross, triangle, corner, nova));
+hollusion(steps(rcross, triangle, corner, nova));
