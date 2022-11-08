@@ -2,17 +2,18 @@
 
 function cone(n, rune){
     
-    return scale_overlay(n, rune, 1);
+    return scale_overlay(1, n, rune);
     
 }
 
-function scale_overlay(n, rune, scale_nr){
+//A function that scale and overlay the different sized runes
+function scale_overlay(scale_nr, n, rune){
     
     return scale_nr === n
     ? rune
-    : overlay_frac(scale_nr/n, scale(scale_nr/n, rune), scale_overlay(n, rune, scale_nr+1));
+    : overlay(scale(scale_nr/n, rune), scale_overlay(scale_nr+1, n, rune));
    
 }
 // Tests
 show(cone(4, circle));
-//hollusion(cone(4, circle));
+hollusion(cone(4, circle));
